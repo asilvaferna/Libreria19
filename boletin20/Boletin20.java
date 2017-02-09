@@ -41,7 +41,8 @@ public class Boletin20 {
 
                     break;
                 case 2: //Vender libro
-                    libreria.vendeLibro(libreria.creaLibro());
+                    String isbn = JOptionPane.showInputDialog("Introduce el ISBN a eliminar: ");
+                    libreria.vendeLibro(isbn);
                     break;
                 case 3: //Mostrar libros ordenados
                     libreria.mostrarOrdenado();
@@ -50,7 +51,7 @@ public class Boletin20 {
                     libreria.borrarSinUnidades();
                     break;
                 case 5: //Consultar libro
-                    String isbn = JOptionPane.showInputDialog("Introduce el ISBN a consultar: ");
+                    isbn = JOptionPane.showInputDialog("Introduce el ISBN a consultar: ");
                     libreria.mostrarLibro(isbn);
                     break;
 

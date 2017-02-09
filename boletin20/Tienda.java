@@ -50,11 +50,11 @@ public class Tienda {
         getLibreria().add(l);
     }
 
-    public void vendeLibro(Libro l) {
+    public void vendeLibro(String isbn) {
         Iterator itLibreria = getLibreria().iterator();
         while (itLibreria.hasNext()) {
             Libro objeto = (Libro) itLibreria.next();
-            if (l.getISBN().equals(objeto.getISBN())) {
+            if (objeto.getISBN().equals(isbn)) {
                 if (objeto.getUds() > 1) {
                     objeto.setUds(objeto.getUds() - 1);
                 } else {
