@@ -23,18 +23,33 @@ public class Tienda {
         return libreria;
     }
 
-    public void añadeLibro(Libro l) {
+    public Libro creaLibro() {
+
+        String autor = JOptionPane.showInputDialog("Autor: ");
+        String titulo = JOptionPane.showInputDialog("Titulo: ");
+        String isbn = JOptionPane.showInputDialog("ISBN: ");
+        long precio = Long.parseLong(JOptionPane.showInputDialog("Precio: "));
+        int uds = Integer.parseInt(JOptionPane.showInputDialog("Unidades: "));
+        Libro l1 = new Libro(titulo, autor, isbn, precio, uds);
+        return l1;
+    }
+
+    public void añadeLibroExistente(int uds) {
         Iterator itLibreria = getLibreria().iterator();
+        Libro l = new Libro();
         while (itLibreria.hasNext()) {
             Libro objeto = (Libro) itLibreria.next();
             if (l.getISBN().equals(objeto.getISBN())) {
-                objeto.setUds(objeto.getUds() + 1);
-            } else {
-                getLibreria().add(l);
-            }
+                objeto.setUds(objeto.getUds() + uds);
+            } 
+        
         }
     }
     
+    public void añadeLibro(Libro l){
+        getLibreria().add(l);
+    }
+
     public void vendeLibro(Libro l) {
         Iterator itLibreria = getLibreria().iterator();
         while (itLibreria.hasNext()) {

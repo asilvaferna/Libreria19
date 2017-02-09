@@ -13,17 +13,17 @@ import java.util.Comparator;
  */
 public class Libro implements Comparable<Libro> {
 
-    private String titulo, autor, ISBN;
+    private String titulo, autor, isbn;
     private long precio;
     private int uds;
 
     public Libro() {
     }
 
-    public Libro(String titulo, String autor, String ISBN, long precio, int uds) {
+    public Libro(String titulo, String autor, String isbn, long precio, int uds) {
         this.titulo = titulo;
         this.autor = autor;
-        this.ISBN = ISBN;
+        this.isbn = isbn;
         this.precio = precio;
         this.uds = uds;
     }
@@ -37,7 +37,7 @@ public class Libro implements Comparable<Libro> {
     }
 
     public String getISBN() {
-        return ISBN;
+        return isbn;
     }
 
     public long getPrecio() {
@@ -56,8 +56,8 @@ public class Libro implements Comparable<Libro> {
         this.autor = autor;
     }
 
-    public void setISBN(String ISBN) {
-        this.ISBN = ISBN;
+    public void setISBN(String isbn) {
+        this.isbn = isbn;
     }
 
     public void setPrecio(long precio) {

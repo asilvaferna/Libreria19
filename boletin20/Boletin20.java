@@ -28,19 +28,20 @@ public class Boletin20 {
                     while (num2 > 0 && num2 < 3) {
                         switch (num2){
                             case 1: //Añadir libro nuevo
-                                
+                                libreria.añadeLibro(libreria.creaLibro());
                                 break;
                             case 2: //Añadir libro existente
+                                int uds = Integer.parseInt(JOptionPane.showInputDialog("Unidades: "));
+                                libreria.añadeLibroExistente(uds);
                                 break;
                                 
                         }
+                        num2 = Integer.parseInt(JOptionPane.showInputDialog("MENU:\n 1. Añadir libro nuevo\n 2. Añadir libro existente\n 3. Retroceder"));
                     }
 
                     break;
-
-
                 case 2: //Vender libro
-
+                    libreria.vendeLibro(libreria.creaLibro());
                     break;
                 case 3: //Mostrar libros ordenados
                     libreria.mostrarOrdenado();
